@@ -2,6 +2,7 @@
     "name": "fora-blog-template",
     "dependencies": {
         "react": "*",
-        "koa": "*"
+        "koa": "*",
+        "koa-send": "*"
     }
 }

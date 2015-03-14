@@ -1,5 +1,5 @@
 import home from "web/home";
-import posts from "web/posts"
+import posts from "web/posts";
 
 export default [
     { method: "get", url: "", handler: home.index },
