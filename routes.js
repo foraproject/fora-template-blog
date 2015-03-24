@@ -1,7 +1,5 @@
-import home from "web/home";
-import posts from "web/posts";
+import index from "./index";
 
 export default [
-    { method: "get", url: "", handler: home.index },
-    { method: "get", url: "/posts/:post", handler: posts.index },
+    { method: "get", url: "", handler: index }
 ];

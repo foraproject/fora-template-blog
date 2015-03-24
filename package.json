@@ -3,6 +3,7 @@
     "dependencies": {
         "react": "*",
         "koa": "*",
-        "koa-send": "*"
+        "koa-send": "*",
+        "babel-loader": "*"
     }
 }
