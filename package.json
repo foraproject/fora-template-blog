@@ -1,9 +1,11 @@
 {
     "name": "fora-blog-template",
     "dependencies": {
+        "co": "*",
         "react": "*",
         "koa": "*",
         "koa-send": "*",
-        "babel-loader": "*"
+        "babel-loader": "*",
+        "fora-router": "*"
     }
 }

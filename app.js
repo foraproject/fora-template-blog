@@ -1,5 +1,8 @@
 import routes from "./routes";
-
+import config from "./config";
+import co from "co";
+import Router from "fora-router";
+import path from "path";
 
 /*
     Static file routes
@@ -23,3 +26,26 @@ var addStaticRoutes = function*(router) {
         }
     );
 };
+
+var init = function() {
+    co(function*() {
+        var host = process.argv[2] || config.host || "127.0.0.1";
+        var port = process.argv[3] || config.port || 8080;
+
+        /* Init koa */
+        var koa = require('koa');
+        var app = koa();
+
+        var router = new Router();
+        routes.forEach(function(route) {
+            router[route.method](route.url, route.handler);
+        });
+        app.use(router.koaRoute());
+
+        app.listen(port);
+
+        console.log(`Blog is listening on ${host}:${port}`);
+    }).then(function() {}, function(err) { console.log(err.stack); });
+};
+
+init();
