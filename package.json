@@ -4,8 +4,8 @@
         "co": "*",
         "react": "*",
         "koa": "*",
+        "isotropy": "*",
         "koa-send": "*",
-        "babel-loader": "*",
-        "fora-router": "*"
+        "babel": "*"
     }
 }
