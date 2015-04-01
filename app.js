@@ -2,6 +2,7 @@ import babel from "babel";
 import routes from "./routes";
 import config from "./config";
 import co from "co";
+import layout from "./layout";
 import Isotropy from "isotropy";
 
 var init = function() {
@@ -13,8 +14,9 @@ var init = function() {
         var koa = require('koa');
         var app = koa();
 
-        var staticDirectories = ["public", "js", "vendor", "css", "images", "fonts"];
-        var isotropy = new Isotropy({ routes, staticDirectories });
+        var isotropy = new Isotropy();
+        isotropy.addStaticDirectories(["public", "js", "vendor", "css", "images", "fonts"], config.destination);
+        isotropy.addPageRoutes(routes.pages, layout);
         yield* isotropy.init();
 
         app.use(isotropy.koaRoute());

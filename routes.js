@@ -1,5 +1,7 @@
 import index from "./index";
 
-export default [
-    { method: "get", url: "", handler: index }
-];
+export default {
+    pages: [
+        { method: "get", url: "", handler: index }
+    ]
+};
