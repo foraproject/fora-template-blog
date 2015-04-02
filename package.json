@@ -4,8 +4,7 @@
         "co": "*",
         "react": "*",
         "koa": "*",
-        "isotropy": "*",
         "koa-send": "*",
-        "babel": "*"
+        "fora-template-kit": "*"
     }
 }
