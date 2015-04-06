@@ -1,9 +1,11 @@
-import init from "fora-template-kit";
+import Isotropy from "isotropy";
 import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
 
-init({
+var isotropy = new Isotropy();
+
+isotropy.init({
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
     routes: routes,

@@ -5,6 +5,6 @@
         "react": "*",
         "koa": "*",
         "koa-send": "*",
-        "fora-template-kit": "*"
+        "isotropy": "*"
     }
 }
