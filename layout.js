@@ -8,17 +8,20 @@ import React from "react";
 export default function*(reactClass, request) {
     var props;
 
-    if (reactClass.getPropsOnServer)
-        props = yield* reactClass.getPropsOnServer(request);
+    if (reactClass.getInitialData) {
+        props = yield* reactClass.getInitialData(request);
+    }
 
     props = props || {};
     var component = React.createFactory(reactClass)(props);
-    var html = `
+
+    return `
 <!DOCTYPE html>
 <html>
     <head>
         <title>${props.title}</title>
         <link href="/css/main.css" rel="stylesheet" media="screen" />
+            <script src="/vendor/js/regenerator-runtime.js" />
         <script src="/js/app.bundle.js" />
         <script>
             var __initialProps = ${JSON.stringify(props)};
@@ -32,6 +35,4 @@ export default function*(reactClass, request) {
     </body>
 </html>
     `;
-
-    return html;
 }

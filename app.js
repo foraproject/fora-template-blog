@@ -1,14 +1,19 @@
-import Isotropy from "isotropy";
+import IsotropyKoa from "isotropy-koa-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
 
-var isotropy = new Isotropy();
-
-isotropy.init({
+var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
     routes: routes,
-    layout: layout,
-    cb: function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); }
-}).then(function() {}, function(err) { console.log(err.stack); });
+    layout: layout
+};
+
+var isotropy = new IsotropyKoa(options);
+
+isotropy.init()
+    .then(
+        function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); },
+        function(err) { console.log(err.stack); }
+    );

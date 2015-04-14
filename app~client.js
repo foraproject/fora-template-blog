@@ -1,3 +1,4 @@
+/*
 import Isotropy from "isotropy";
 import routes from "./routes";
 import config from "./config";
@@ -12,3 +13,4 @@ isotropy.init({
     layout: layout,
     cb: function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); }
 }).then(function() {}, function(err) { console.log(err.stack); });
+*/
