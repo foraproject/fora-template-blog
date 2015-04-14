@@ -5,7 +5,7 @@
         "react": "*",
         "koa": "*",
         "koa-send": "*",
-        "isotropy": "*",
+        "isotropy-koa-mode": "*",
         "babel-loader": "*"
     }
 }
