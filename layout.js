@@ -15,7 +15,7 @@ export default function*(reactClass, request) {
     props = props || {};
     var component = React.createFactory(reactClass)(props);
 
-    return `
+    request.body = `
 <!DOCTYPE html>
 <html>
     <head>

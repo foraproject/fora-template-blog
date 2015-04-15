@@ -1,4 +1,4 @@
-import IsotropyKoa from "isotropy-koa-mode";
+import IsotropyKoaMode from "isotropy-koa-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
@@ -6,11 +6,15 @@ import layout from "./layout";
 var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
-    routes: routes,
-    layout: layout
+    routing: {
+        pages: {
+            routes: routes.pages,
+            layout: layout
+        }
+    }
 };
 
-var isotropy = new IsotropyKoa(options);
+var isotropy = new IsotropyKoaMode(options);
 
 isotropy.init()
     .then(
