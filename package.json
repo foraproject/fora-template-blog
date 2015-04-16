@@ -6,6 +6,6 @@
         "koa": "*",
         "koa-send": "*",
         "isotropy-koa-mode": "*",
-        "babel-loader": "*"
+        "isotropy-browser-mode": "*"
     }
 }

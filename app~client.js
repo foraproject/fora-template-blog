@@ -18,6 +18,6 @@ var isotropy = new IsotropyBrowserMode(options);
 
 isotropy.init()
     .then(
-        function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); },
+        function(result) { console.log(`Blog started.`); },
         function(err) { console.log(err.stack); }
     );

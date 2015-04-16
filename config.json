@@ -1,4 +1,19 @@
 {
     "title": "Your website name",
-    "email": "youremail@example.com"
+    "email": "youremail@example.com",
+    "tasks": {
+        "build_client": {
+            "webpack": {
+    			"externals": {
+                    "react": "React"
+                },
+                "module": {
+                    "loaders": [
+                        { "test": "\\.(js|jsx)$", "loader": "babel-loader?blacklist[]=regenerator" },
+                        { "test": "\\.json$/", "loader": "json-loader" }
+                    ]
+                }
+            }
+		}
+    }
 }

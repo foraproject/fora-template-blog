@@ -11,7 +11,11 @@ export default class HelloMessage extends React.Component {
         };
     }
 
+    handleClick() {
+        alert("hello world...");
+    }
+
     render() {
-        return <div>Hello {this.props.message}</div>;
+        return <div onClick={this.handleClick}>Hello {this.props.message}</div>;
     }
 }

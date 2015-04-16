@@ -21,7 +21,8 @@ export default function*(reactClass, request) {
     <head>
         <title>${props.title}</title>
         <link href="/css/main.css" rel="stylesheet" media="screen" />
-            <script src="/vendor/js/regenerator-runtime.js" />
+        <script src="/vendor/js/regenerator-runtime.js"></script>
+        <script src="/vendor/js/react.js"></script>
         <script src="/js/app.bundle.js" />
         <script>
             var __initialProps = ${JSON.stringify(props)};
