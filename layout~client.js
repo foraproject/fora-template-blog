@@ -6,11 +6,11 @@
 import React from "react";
 
 export default function*(reactClass, request) {
-    var props = (__initialProps) ? JSON.parse(__initialProps) : {};
+    var props = __initialProps || {};
     var component = React.createFactory(reactClass)(props);
-
+    console.log(component);
     if (props.title)
         document.title = props.title;
 
-    React.renderComponent(component, document.getElementsByClassName('app-container')[0]);
+    React.render(component, document.getElementsByClassName('app-container')[0]);
 }
