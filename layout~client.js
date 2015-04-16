@@ -8,7 +8,7 @@ import React from "react";
 export default function*(reactClass, request) {
     var props = __initialProps || {};
     var component = React.createFactory(reactClass)(props);
-    console.log(component);
+
     if (props.title)
         document.title = props.title;
 

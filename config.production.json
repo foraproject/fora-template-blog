@@ -4,12 +4,8 @@
     "tasks": {
         "build_client": {
             "browserify": {
-                "debug": true,
                 "globals": {
                     "react": "React"
-                },
-                "babel": {
-                    "blacklist": ["regenerator"]
                 }
             }
         }
