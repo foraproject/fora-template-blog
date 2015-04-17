@@ -24,7 +24,7 @@ export default function*(reactClass, request) {
         <script>
             var __initialProps = ${JSON.stringify(props)};
         </script>
-        <script src="/vendor/js/regenerator-runtime.js"></script>
+        <script src="/vendor/js/browser-polyfill.js"></script>
         <script src="/vendor/js/react.js"></script>
         <script src="/js/app.bundle.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
