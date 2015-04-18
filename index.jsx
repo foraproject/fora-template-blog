@@ -1,8 +1,11 @@
 import React from "react";
+import getDb from "./lib/db-connector";
 
 export default class HelloMessage extends React.Component {
 
     static *getInitialData() {
+        var db = yield* getDb();
+        console.log(db);
         return {
             title: "Hello World",
             message: `For instance, on the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved

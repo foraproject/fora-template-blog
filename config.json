@@ -1,15 +1,27 @@
 {
     "title": "Your website name",
     "email": "youremail@example.com",
-    "tasks": {
-        "build_client": {
-            "browserify": {
-                "debug": true,
-                "globals": {
-                    "react": "React"
-                },
-                "babel": {
-                    "blacklist": ["regenerator"]
+    "build": "production",
+    "database": "my-blog-db",
+    "builds": {
+        "production": {
+            "tasks": {
+                "build-client": {
+                    "global-modules": {
+                        "react": "React"
+                    }
+                }
+            }
+        },
+        "client-debug": {
+            "tasks": {
+                "build-client": {
+                    "global-modules": {
+                        "react": "React"
+                    },
+                    "es6-transpile": {
+                        "blacklist": ["regenerator"]
+                    }
                 }
             }
         }

@@ -6,6 +6,8 @@
         "koa": "*",
         "koa-send": "*",
         "isotropy-koa-mode": "*",
-        "isotropy-browser-mode": "*"
+        "isotropy-browser-mode": "*",
+        "ceramic-backend-mongodb": "*",
+        "ceramic-backend-nedb": "*"
     }
 }
