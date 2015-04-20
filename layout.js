@@ -8,8 +8,8 @@ import React from "react";
 export default function*(reactClass, request) {
     var props;
 
-    if (reactClass.getInitialData) {
-        props = yield* reactClass.getInitialData(request);
+    if (reactClass.getInitialProps) {
+        props = yield* reactClass.getInitialProps(request);
     }
 
     props = props || {};

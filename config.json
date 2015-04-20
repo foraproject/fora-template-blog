@@ -1,8 +1,8 @@
 {
     "title": "Your website name",
     "email": "youremail@example.com",
-    "build": "production",
-    "database": "my-blog-db",
+    "build-name": "production",
+    "database": "my-blog-database",
     "builds": {
         "production": {
             "tasks": {

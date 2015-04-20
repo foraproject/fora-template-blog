@@ -6,8 +6,15 @@
 import React from "react";
 
 export default function*(reactClass, request) {
-    var props = __initialProps || {};
-    var component = React.createFactory(reactClass)(props);
+    let props;
+    if (typeof __initialProps !== "undefined")
+        props = __initialProps;
+    else {
+        if (reactClass.getInitialPropsViaAjax) {
+            props = (yield* reactClass.getInitialPropsViaAjax(request));
+        }
+    }
+    let component = React.createFactory(reactClass)(props);
 
     if (props.title)
         document.title = props.title;
