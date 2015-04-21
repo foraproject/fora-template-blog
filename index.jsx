@@ -3,7 +3,7 @@ import getDb from "./lib/db-connector";
 
 export default class HelloMessage extends React.Component {
 
-    static *getInitialData() {
+    static *getInitialProps() {
         var db = yield* getDb();
         var collection = yield* db.collection("projects");
         var cursor = yield* collection.find({});

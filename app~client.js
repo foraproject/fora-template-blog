@@ -3,7 +3,7 @@ import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
 
-var options = {
+let options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
     routing: {
@@ -14,10 +14,18 @@ var options = {
     }
 };
 
-var isotropy = new IsotropyBrowserMode(options);
+let isotropy = new IsotropyBrowserMode(options);
 
-isotropy.init()
-    .then(
-        function(result) { console.log(`Blog started.`); },
-        function(err) { console.log(err.stack); }
-    );
+let onLoad = function() {
+    isotropy.init()
+        .then(
+            function(result) { console.log(`Blog started.`); },
+            function(err) { console.log(err.stack); }
+        );
+};
+
+if (document.readyState != 'loading'){
+    onLoad();
+} else {
+    document.addEventListener('DOMContentLoaded', onLoad);
+}
