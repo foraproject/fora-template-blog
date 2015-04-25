@@ -3,16 +3,18 @@ import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
 
-let options = {
+var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
-    routing: {
-        pages: {
-            routes: routes.pages,
-            layout: layout
-        }
-    }
+    routing: {}
 };
+
+if (routes.pages) {
+    options.routing.pages = {
+        routes: routes.pages,
+        layout: layout
+    };
+}
 
 let isotropy = new IsotropyBrowserMode(options);
 

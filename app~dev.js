@@ -1,4 +1,4 @@
-import IsotropyBrowserMode from "isotropy-browser-mode";
+import IsotropyKoaMode from "isotropy-koa-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
@@ -6,18 +6,34 @@ import layout from "./layout";
 var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
-    routing: {
-        pages: {
-            routes: routes.pages,
-            layout: layout
-        }
-    }
+    routing: {}
 };
 
-var isotropy = new IsotropyBrowserMode(options);
+if (routes.pages) {
+    options.routing.pages = {
+        routes: routes.pages,
+        layout: layout
+    };
+}
 
-isotropy.init()
-    .then(
-        function(result) { console.log(`Blog started.`); },
-        function(err) { console.log(err.stack); }
-    );
+if (routes.api) {
+    options.routing.pages = {
+        routes: routes.api
+    };
+}
+
+let isotropy = new IsotropyBrowserMode(options);
+
+let onLoad = function() {
+    isotropy.init()
+        .then(
+            function(result) { console.log(`Blog started.`); },
+            function(err) { console.log(err.stack); }
+        );
+};
+
+if (document.readyState != 'loading'){
+    onLoad();
+} else {
+    document.addEventListener('DOMContentLoaded', onLoad);
+}

@@ -10,12 +10,16 @@ export default class HelloMessage extends React.Component {
         return { projects: yield* cursor.toArray() };
     }
 
+    clicked(p) {
+        console.log(JSON.stringify(p));
+    }
+
     render() {
         var self = this;
         return (
             <ul>
                 {
-                    this.props.projects.map(project => <li><a href={`/projects/${project.id}`}>{project.id}</a></li>)
+                    this.props.projects.map(project => <li onClick={() => this.clicked(project)}><a href={`/projects/${project.id}?text=hello&ver=1`}>{project.id}</a></li>)
                 }
             </ul>
         );

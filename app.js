@@ -6,13 +6,21 @@ import layout from "./layout";
 var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
-    routing: {
-        pages: {
-            routes: routes.pages,
-            layout: layout
-        }
-    }
+    routing: {}
 };
+
+if (routes.pages) {
+    options.routing.pages = {
+        routes: routes.pages,
+        layout: layout
+    };
+}
+
+if (routes.api) {
+    options.routing.api = {
+        routes: routes.api
+    };
+}
 
 var isotropy = new IsotropyKoaMode(options);
 
