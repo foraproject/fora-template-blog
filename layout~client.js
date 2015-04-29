@@ -5,14 +5,14 @@
 */
 import React from "react";
 
-export default function*(reactClass, request) {
+export default function*(reactClass, args) {
     let props;
     if (typeof __initialProps !== "undefined") {
         props = __initialProps;
         __initialProps = undefined;
     } else {
         if (reactClass.getInitialPropsViaAjax) {
-            props = JSON.parse(yield reactClass.getInitialPropsViaAjax(request));
+            props = yield* reactClass.getInitialPropsViaAjax.apply(this, args);
         }
     }
     let component = React.createFactory(reactClass)(props);

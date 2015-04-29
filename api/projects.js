@@ -1,12 +1,15 @@
-let getProject = function*(id) {
-    this.body = {
-        project: {
-            id: "new_project_id",
-            description: "lorem ipsum dolor sit"
-        }
-    };
+import Project from "../models/project";
+
+let getAll = function*() {
+    var projects = yield* Project.getAll();
+    this.body = projects;
+};
+
+let getByName = function*(name) {
+    var project = yield* Project.getByName(name);
+    this.body = project;
 };
 
 module.exports = {
-    getProject
+    getAll, getByName
 };

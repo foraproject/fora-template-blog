@@ -1,15 +1,14 @@
 [
-    { "id": "crankshaft" },
-    { "id": "ceramic" },
-    { "id": "ceramic-db" },
-    { "id": "ceramic-backend-mongodb" },
-    { "id": "ceramic-backend-nedb" },
-    { "id": "ceramic-dictionary-parser" },
-    { "id": "isotropy" },
-    { "id": "isotropy-koa-mode" },
-    { "id": "isotropy-browser-mode" },
-    { "id": "isotropy-router" },
-    { "id": "isotropy-browser-request" },
-    { "id": "crankshaft" },
-    { "id": "fora" }
+    { "name": "ceramic", "desc": "Dinner Time" },
+    { "name": "ceramic-db", "desc": "Tragedy" },
+    { "name": "ceramic-backend-mongodb", "desc": "Bongos" },
+    { "name": "ceramic-backend-nedb", "desc": "Pottery Town" },
+    { "name": "ceramic-dictionary-parser", "desc": "Oxford English Dictionary" },
+    { "name": "isotropy", "desc": "Dark Matter" },
+    { "name": "isotropy-koa-mode", "desc": "Boa Constrictor" },
+    { "name": "isotropy-browser-mode", "desc": "Privacy Shark" },
+    { "name": "isotropy-router", "desc": "Mars Orbiter" },
+    { "name": "isotropy-browser-request", "desc": "Chemical Reaction" },
+    { "name": "crankshaft", "desc": "Steam Engine" },
+    { "name": "fora", "desc": "Entertainment Platform" }
 ]

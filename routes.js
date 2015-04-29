@@ -8,6 +8,7 @@ export default {
         { method: "get", url: "/projects/:id", handler: pages_projects_project }
     ],
     api: [
-        { method: "get", url: "/api/projects/:id", handler: api_projects.getProject }
+        { method: "get", url: "/api/projects", handler: api_projects.getAll },
+        { method: "get", url: "/api/projects/:id", handler: api_projects.getByName }
     ]
 };

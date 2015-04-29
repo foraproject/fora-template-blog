@@ -5,17 +5,17 @@
 */
 import React from "react";
 
-export default function*(reactClass, request) {
+export default function*(reactClass, args) {
     var props;
 
     if (reactClass.getInitialProps) {
-        props = yield* reactClass.getInitialProps(request);
+        props = yield* reactClass.getInitialProps.apply(this, args);
     }
 
     props = props || {};
     var component = React.createFactory(reactClass)(props);
 
-    request.body = `
+    this.body = `
 <!DOCTYPE html>
 <html>
     <head>

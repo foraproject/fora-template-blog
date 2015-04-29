@@ -1,25 +1,31 @@
 import React from "react";
-import getDb from "./lib/db-connector";
+import Project from "./models/project";
+import http from "./lib/http-connector";
 
-export default class HelloMessage extends React.Component {
+export default class HomePage extends React.Component {
 
     static *getInitialProps() {
-        var db = yield* getDb();
-        var collection = yield* db.collection("projects");
-        var cursor = yield* collection.find({});
-        return { projects: yield* cursor.toArray() };
+        var projects = yield* Project.getAll();
+        return { projects };
     }
 
-    clicked(p) {
-        console.log(JSON.stringify(p));
+
+    static *getInitialPropsViaAjax() {
+        var response = yield* http(function(req) {
+            req.open('GET', '/api/projects', true);
+            req.send();
+        });
+        var projects = JSON.parse(response);
+        return { projects };
     }
+
 
     render() {
         var self = this;
         return (
             <ul>
                 {
-                    this.props.projects.map(project => <li onClick={() => this.clicked(project)}><a href={`/projects/${project.id}?text=hello&ver=1`}>{project.id}</a></li>)
+                    this.props.projects.map(project => <li><a href={`/projects/${project.name}`}>{project.name}: {project.desc}</a></li>)
                 }
             </ul>
         );
