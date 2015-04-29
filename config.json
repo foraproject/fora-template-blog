@@ -3,6 +3,7 @@
     "email": "youremail@example.com",
     "build-name": "production",
     "database": "my-blog-database",
+    "port": "4000",
     "builds": {
         "production": {
             "tasks": {
@@ -14,6 +15,18 @@
             }
         },
         "client-debug": {
+            "tasks": {
+                "build-client": {
+                    "global-modules": {
+                        "react": "React"
+                    },
+                    "es6-transpile": {
+                        "blacklist": ["regenerator"]
+                    }
+                }
+            }
+        },
+        "dev": {
             "tasks": {
                 "build-client": {
                     "global-modules": {
