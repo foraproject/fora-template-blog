@@ -7,7 +7,7 @@
     "builds": {
         "production": {
             "tasks": {
-                "build-client": {
+                "build-browser-app": {
                     "global-modules": {
                         "react": "React"
                     }
@@ -16,7 +16,7 @@
         },
         "client-debug": {
             "tasks": {
-                "build-client": {
+                "build-browser-app": {
                     "global-modules": {
                         "react": "React"
                     },
@@ -28,9 +28,10 @@
         },
         "dev": {
             "tasks": {
-                "build-client": {
+                "build-browser-app": {
                     "global-modules": {
-                        "react": "React"
+                        "react": "React",
+                        "nedb": "Nedb"
                     },
                     "es6-transpile": {
                         "blacklist": ["regenerator"]

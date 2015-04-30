@@ -21,7 +21,18 @@ export default class HelloMessage extends React.Component {
     render() {
         var self = this;
         return (
-            <div>{JSON.stringify(this.props.project)}</div>
+            <div>
+                <div>
+                    <h2>{this.props.project.name}</h2>
+                    <p>{this.props.project.desc}</p>
+                </div>
+
+                <div>
+                    <p>
+                        Back to <a href="/">Projects</a>
+                    </p>
+                </div>
+            </div>
         );
     }
 }

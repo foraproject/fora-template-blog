@@ -1,4 +1,4 @@
-import IsotropyKoaMode from "isotropy-koa-mode";
+import IsotropyBrowserMode from "isotropy-browser-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./layout";
@@ -17,7 +17,7 @@ if (routes.pages) {
 }
 
 if (routes.api) {
-    options.routing.pages = {
+    options.routing.api = {
         routes: routes.api
     };
 }
