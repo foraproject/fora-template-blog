@@ -9,6 +9,9 @@ export default {
     ],
     api: [
         { method: "get", url: "/api/projects", handler: api_projects.getAll },
+        { method: "post", url: "/api/projects", handler: api_projects.create },
+        { method: "del", url: "/api/projects", handler: api_projects.remove },
+        { method: "put", url: "/api/projects", handler: api_projects.update },
         { method: "get", url: "/api/projects/:id", handler: api_projects.getByName }
     ]
 };

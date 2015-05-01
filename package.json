@@ -7,7 +7,9 @@
         "koa-send": "*",
         "isotropy-koa-mode": "*",
         "isotropy-browser-mode": "*",
+        "isotropy-xml-http-request": "*",
         "ceramic-backend-mongodb": "*",
-        "ceramic-backend-nedb": "*"
+        "ceramic-backend-nedb": "*",
+        "react": "*"
     }
 }

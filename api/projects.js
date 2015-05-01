@@ -10,6 +10,18 @@ let getByName = function*(name) {
     this.body = project;
 };
 
+let create = function*(item) {
+    console.log(item);
+};
+
+let remove = function*(name) {
+    console.log(name);
+};
+
+let update = function*(item) {
+    console.log(item);
+};
+
 module.exports = {
-    getAll, getByName
+    getAll, getByName, create, remove, update
 };
