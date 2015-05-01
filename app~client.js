@@ -1,7 +1,7 @@
 import IsotropyBrowserMode from "isotropy-browser-mode";
 import routes from "./routes";
 import config from "./config";
-import layout from "./layout";
+import layout from "./lib/layout";
 
 var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],

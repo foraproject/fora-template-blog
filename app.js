@@ -1,7 +1,7 @@
 import IsotropyKoaMode from "isotropy-koa-mode";
 import routes from "./routes";
 import config from "./config";
-import layout from "./layout";
+import layout from "./lib/layout";
 
 var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],

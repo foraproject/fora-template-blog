@@ -1,9 +1,11 @@
 import IsotropyBrowserMode from "isotropy-browser-mode";
 import routes from "./routes";
 import config from "./config";
-import layout from "./layout";
+import layout from "./lib/layout";
+import getDb from "./lib/db-connector";
+import data from "./data";
 
-var options = {
+let options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
     routing: {}
@@ -21,6 +23,14 @@ if (routes.api) {
         routes: routes.api
     };
 }
+
+options.beforeInit = function*() {
+    let db = yield* getDb();
+    for (let key in data) {
+        let collection = yield* db.collection("projects");
+        yield* collection.insertMany(data[key]);
+    }
+};
 
 let isotropy = new IsotropyBrowserMode(options);
 
