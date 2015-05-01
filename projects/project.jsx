@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "../models/project";
-import http from "../lib/http-connector";
+import { http } from "../lib/http-connector";
 
 export default class HelloMessage extends React.Component {
 
