@@ -9,7 +9,8 @@
             "tasks": {
                 "build-browser-app": {
                     "global-modules": {
-                        "react": "React"
+                        "react": "React",
+                        "bluebird": "Promise"
                     }
                 }
             }
@@ -18,7 +19,8 @@
             "tasks": {
                 "build-browser-app": {
                     "global-modules": {
-                        "react": "React"
+                        "react": "React",
+                        "bluebird": "Promise"
                     },
                     "es6-transpile": {
                         "blacklist": ["regenerator"]
@@ -31,7 +33,8 @@
                 "build-browser-app": {
                     "global-modules": {
                         "react": "React",
-                        "nedb": "Nedb"
+                        "nedb": "Nedb",
+                        "bluebird": "Promise"
                     },
                     "es6-transpile": {
                         "blacklist": ["regenerator"]

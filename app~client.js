@@ -1,4 +1,4 @@
-import IsotropyBrowserMode from "isotropy-browser-mode";
+import Isotropy from "isotropy-browser-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./lib/layout";
@@ -16,13 +16,20 @@ if (routes.pages) {
     };
 }
 
-let isotropy = new IsotropyBrowserMode(options);
+var onError = function(err) {
+    console.log(err);
+    console.log(err.stack);
+};
+
+let isotropy = new Isotropy(options);
 
 let onLoad = function() {
     isotropy.init()
         .then(
-            function(result) { console.log(`Blog started.`); },
-            function(err) { console.log(err.stack); }
+            function() {
+                console.log(`Blog started.`);
+            },
+            onError
         );
 };
 

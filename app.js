@@ -1,4 +1,4 @@
-import IsotropyKoaMode from "isotropy-koa-mode";
+import Isotropy from "isotropy-koa-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./lib/layout";
@@ -22,10 +22,15 @@ if (routes.api) {
     };
 }
 
-var isotropy = new IsotropyKoaMode(options);
+var onError = function(err) {
+    console.log(err);
+    console.log(err.stack);
+};
+
+var isotropy = new Isotropy(options);
 
 isotropy.init()
     .then(
         function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); },
-        function(err) { console.log(err.stack); }
+        onError
     );

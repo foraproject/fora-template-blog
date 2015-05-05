@@ -30,6 +30,18 @@ export default class HomePage extends React.Component {
         });
     }
 
+
+    ajaxAlert(name) {
+        co(function*() {
+            var response = yield* http(function(req) {
+                req.open('GET', `/api/projects/${name}`, true);
+                req.send();
+            });
+            var project = JSON.parse(response);
+            alert(JSON.stringify(project));
+        });
+    }
+
     render() {
         var self = this;
         return (
@@ -43,6 +55,12 @@ export default class HomePage extends React.Component {
                 <ul>
                     {
                         this.props.projects.map(project => <li><a href={`/projects/${project.name}`}>{project.name}: {project.desc}</a></li>)
+                    }
+                </ul>
+                <h2>AJAX Alert</h2>
+                <ul>
+                    {
+                        this.props.projects.map(project => <li onClick={this.ajaxAlert.bind(this, project.name)}>{project.name}: {project.desc}</li>)
                     }
                 </ul>
             </div>

@@ -5,11 +5,14 @@
         "react": "*",
         "koa": "*",
         "koa-send": "*",
+        "koa-in-browser": "*",
+        "koa-send-in-browser": "*",
         "isotropy-koa-mode": "*",
         "isotropy-browser-mode": "*",
         "isotropy-xml-http-request": "*",
         "ceramic-backend-mongodb": "*",
         "ceramic-backend-nedb": "*",
-        "react": "*"
+        "react": "*",
+        "page": "*"
     }
 }
