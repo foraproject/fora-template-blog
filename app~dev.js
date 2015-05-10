@@ -1,11 +1,11 @@
-import IsotropyBrowserMode from "isotropy-browser-mode";
+import Isotropy from "isotropy-dev-mode";
 import routes from "./routes";
 import config from "./config";
 import layout from "./lib/layout";
 import getDb from "./lib/db-connector";
 import data from "./data";
 
-let options = {
+var options = {
     staticDirectories: ["public", "js", "vendor", "css", "images", "fonts"],
     config: config,
     routing: {}
@@ -32,13 +32,18 @@ options.beforeInit = function*() {
     }
 };
 
-let isotropy = new IsotropyBrowserMode(options);
+let isotropy = new Isotropy(options);
+
+var onError = function(err) {
+    console.log(err);
+    console.log(err.stack);
+};
 
 let onLoad = function() {
     isotropy.init()
         .then(
-            function(result) { console.log(`Blog started.`); },
-            function(err) { console.log(err.stack); }
+            function(result) { console.log(`Blog started on ${result.host}:${result.port}.`); },
+            onError
         );
 };
 
