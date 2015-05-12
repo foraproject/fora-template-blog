@@ -1,4 +1,5 @@
 import Project from "../models/project";
+import parse from "co-body";
 
 let getAll = function*() {
     var projects = yield* Project.getAll();
@@ -10,8 +11,10 @@ let getByName = function*(name) {
     this.body = project;
 };
 
-let create = function*(item) {
-    console.log(item);
+let create = function*() {
+    var params = yield parse(this);
+    params.from = "SERVER!";
+    this.body = params;
 };
 
 let remove = function*(name) {
