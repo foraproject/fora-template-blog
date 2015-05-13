@@ -22,12 +22,10 @@ export default class HomePage extends React.Component {
 
 
     saveProject(e) {
-        co(function*() {
-            var response = yield* http(function(req) {
-                req.open('POST', '/api/projects', true);
-                req.setRequestHeader('Content-Type', 'application/json');
-                req.send(JSON.stringify({ name: "hello", desc: "world"}));
-            });
+        post(
+            "/api/projects",
+            { name: "hello", desc: "world"}
+        ).then(function(response) {
             var newProject = JSON.parse(response);
             alert(JSON.stringify(newProject));
         });
