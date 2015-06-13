@@ -1,5 +1,5 @@
 import Project from "../models/project";
-import parse from "co-body";
+import parse from "../lib/body-parser";
 
 let getAll = function*() {
     var projects = yield* Project.getAll();
